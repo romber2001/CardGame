@@ -14,7 +14,8 @@
 
 @property (nonatomic, readonly) NSInteger score;
 
-- (instancetype)initWithCardCount:(NSUInteger) count usingDeck:(RLDeck *)deck;
+- (instancetype)initWithCardCount:(NSUInteger) count
+                        usingDeck:(RLDeck *)deck;
 
 - (void)chooseCardAtIndex:(NSUInteger)index;
 - (RLCard *)cardAtIndex:(NSUInteger)index;

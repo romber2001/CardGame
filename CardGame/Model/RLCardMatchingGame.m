@@ -26,7 +26,8 @@
     return _cards;
 }
 
-- (instancetype)initWithCardCount:(NSUInteger) count usingDeck:(RLDeck *)deck
+- (instancetype)initWithCardCount:(NSUInteger) count
+                        usingDeck:(RLDeck *)deck
 {
     self = [super init];
     
@@ -45,12 +46,40 @@
     return self;
 }
 
+static const int MISMATCH_PENALTY = 2;
+static const int MATCH_BONUS = 4;
+static const int COST_TO_CHOOSE = 1;
+
 - (void)chooseCardAtIndex:(NSUInteger)index
 {
     RLCard *card = [self cardAtIndex:index];
     
+    if (!card.isMatched) {
+        if (card.isChosen) {
+            card.chosen = NO;
+        } else {
+            //match against another card
+            for (RLCard *otherCard in self.cards) {
+                if (otherCard.isChosen && !otherCard.isMatched) {
+                    int matchScore = [card match:@[otherCard]];
+                    if (matchScore) {
+                        self.score +=matchScore * MATCH_BONUS;
+                        card.mactched = YES;
+                        otherCard.mactched = YES;
+                    } else {
+                        self.score -= MISMATCH_PENALTY;
+                        otherCard.chosen = NO;
+                    }
+                    break;
+                }
+            }
+            self.score -= COST_TO_CHOOSE;
+            card.chosen = YES;
+        }
+    }
     
 }
+
 - (RLCard *)cardAtIndex:(NSUInteger)index
 {
     return (index < [self.cards count]) ? self.cards[index] : nil;

@@ -12,6 +12,22 @@
 
 @synthesize suit = _suit;
 
+- (NSInteger)match:(NSArray *)otherCards
+{
+    int score = 0;
+    
+    if ([otherCards count] == 1) {
+        RLPlayingCard *otherCard = [otherCards firstObject];
+        if ([self.suit isEqualToString:otherCard.suit]) {
+            score = 1;
+        } else if (self.rank == otherCard.rank) {
+            score = 4;
+        }
+    }
+    
+    return score;
+}
+
 - (NSString *)contents {
     NSArray *rankStrings = [RLPlayingCard rankStrings];
     return [rankStrings[self.rank] stringByAppendingString:self.suit];
