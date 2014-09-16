@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		02252AF119C5AC7F0031B746 /* RLCardMatchingGame.m in Sources */ = {isa = PBXBuildFile; fileRef = 02252AF019C5AC7F0031B746 /* RLCardMatchingGame.m */; };
 		0249103219B9CFB400E8793C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0249103119B9CFB400E8793C /* Foundation.framework */; };
 		0249103419B9CFB400E8793C /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0249103319B9CFB400E8793C /* CoreGraphics.framework */; };
 		0249103619B9CFB400E8793C /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0249103519B9CFB400E8793C /* UIKit.framework */; };
@@ -21,6 +22,10 @@
 		0249105319B9CFB400E8793C /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0249103519B9CFB400E8793C /* UIKit.framework */; };
 		0249105B19B9CFB400E8793C /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 0249105919B9CFB400E8793C /* InfoPlist.strings */; };
 		0249105D19B9CFB400E8793C /* CardGameTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0249105C19B9CFB400E8793C /* CardGameTests.m */; };
+		0249106819B9D82700E8793C /* RLCard.m in Sources */ = {isa = PBXBuildFile; fileRef = 0249106719B9D82700E8793C /* RLCard.m */; };
+		0249106C19B9D93D00E8793C /* RLPlayingCard.m in Sources */ = {isa = PBXBuildFile; fileRef = 0249106B19B9D93D00E8793C /* RLPlayingCard.m */; };
+		0249106F19B9D95C00E8793C /* RLDeck.m in Sources */ = {isa = PBXBuildFile; fileRef = 0249106E19B9D95C00E8793C /* RLDeck.m */; };
+		0249107219B9D98A00E8793C /* RLPlayingCardDeck.m in Sources */ = {isa = PBXBuildFile; fileRef = 0249107119B9D98A00E8793C /* RLPlayingCardDeck.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,6 +39,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		02252AEF19C5AC7F0031B746 /* RLCardMatchingGame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RLCardMatchingGame.h; path = Model/RLCardMatchingGame.h; sourceTree = "<group>"; };
+		02252AF019C5AC7F0031B746 /* RLCardMatchingGame.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RLCardMatchingGame.m; path = Model/RLCardMatchingGame.m; sourceTree = "<group>"; };
 		0249102E19B9CFB400E8793C /* CardGame.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CardGame.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0249103119B9CFB400E8793C /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		0249103319B9CFB400E8793C /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -53,6 +60,14 @@
 		0249105819B9CFB400E8793C /* CardGameTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "CardGameTests-Info.plist"; sourceTree = "<group>"; };
 		0249105A19B9CFB400E8793C /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		0249105C19B9CFB400E8793C /* CardGameTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CardGameTests.m; sourceTree = "<group>"; };
+		0249106619B9D82700E8793C /* RLCard.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RLCard.h; path = Model/RLCard.h; sourceTree = "<group>"; };
+		0249106719B9D82700E8793C /* RLCard.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RLCard.m; path = Model/RLCard.m; sourceTree = "<group>"; };
+		0249106A19B9D93D00E8793C /* RLPlayingCard.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RLPlayingCard.h; path = Model/RLPlayingCard.h; sourceTree = "<group>"; };
+		0249106B19B9D93D00E8793C /* RLPlayingCard.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RLPlayingCard.m; path = Model/RLPlayingCard.m; sourceTree = "<group>"; };
+		0249106D19B9D95C00E8793C /* RLDeck.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RLDeck.h; path = Model/RLDeck.h; sourceTree = "<group>"; };
+		0249106E19B9D95C00E8793C /* RLDeck.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RLDeck.m; path = Model/RLDeck.m; sourceTree = "<group>"; };
+		0249107019B9D98A00E8793C /* RLPlayingCardDeck.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RLPlayingCardDeck.h; path = Model/RLPlayingCardDeck.h; sourceTree = "<group>"; };
+		0249107119B9D98A00E8793C /* RLPlayingCardDeck.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RLPlayingCardDeck.m; path = Model/RLPlayingCardDeck.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -115,6 +130,7 @@
 				0249104019B9CFB400E8793C /* RLAppDelegate.h */,
 				0249104119B9CFB400E8793C /* RLAppDelegate.m */,
 				0249104319B9CFB400E8793C /* Main.storyboard */,
+				0249106919B9D8A600E8793C /* Model */,
 				0249104619B9CFB400E8793C /* RLViewController.h */,
 				0249104719B9CFB400E8793C /* RLViewController.m */,
 				0249104919B9CFB400E8793C /* Images.xcassets */,
@@ -150,6 +166,23 @@
 				0249105919B9CFB400E8793C /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		0249106919B9D8A600E8793C /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				02252AEF19C5AC7F0031B746 /* RLCardMatchingGame.h */,
+				02252AF019C5AC7F0031B746 /* RLCardMatchingGame.m */,
+				0249106619B9D82700E8793C /* RLCard.h */,
+				0249106719B9D82700E8793C /* RLCard.m */,
+				0249106A19B9D93D00E8793C /* RLPlayingCard.h */,
+				0249106B19B9D93D00E8793C /* RLPlayingCard.m */,
+				0249106D19B9D95C00E8793C /* RLDeck.h */,
+				0249106E19B9D95C00E8793C /* RLDeck.m */,
+				0249107019B9D98A00E8793C /* RLPlayingCardDeck.h */,
+				0249107119B9D98A00E8793C /* RLPlayingCardDeck.m */,
+			);
+			name = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -250,9 +283,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0249106F19B9D95C00E8793C /* RLDeck.m in Sources */,
 				0249104219B9CFB400E8793C /* RLAppDelegate.m in Sources */,
 				0249103E19B9CFB400E8793C /* main.m in Sources */,
 				0249104819B9CFB400E8793C /* RLViewController.m in Sources */,
+				02252AF119C5AC7F0031B746 /* RLCardMatchingGame.m in Sources */,
+				0249107219B9D98A00E8793C /* RLPlayingCardDeck.m in Sources */,
+				0249106819B9D82700E8793C /* RLCard.m in Sources */,
+				0249106C19B9D93D00E8793C /* RLPlayingCard.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -457,6 +495,7 @@
 				0249106219B9CFB400E8793C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		0249106319B9CFB400E8793C /* Build configuration list for PBXNativeTarget "CardGameTests" */ = {
 			isa = XCConfigurationList;
@@ -465,6 +504,7 @@
 				0249106519B9CFB400E8793C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
