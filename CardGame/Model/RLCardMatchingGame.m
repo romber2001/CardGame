@@ -12,6 +12,7 @@
 
 @property (nonatomic,readwrite) NSInteger score;
 @property (nonatomic, strong) NSMutableArray *cards; // of card
+@property (nonatomic, strong) NSMutableArray *otherCards; //waiting for to be matched
 
 @end
 
@@ -24,6 +25,13 @@
     }
     
     return _cards;
+}
+
+- (NSMutableArray *)otherCards
+{
+    if (!_otherCards) _otherCards = [[NSMutableArray alloc] init];
+    
+    return _otherCards;
 }
 
 - (instancetype)initWithCardCount:(NSUInteger) count
@@ -61,6 +69,7 @@ static const int COST_TO_CHOOSE = 1;
             //match against another card
             for (RLCard *otherCard in self.cards) {
                 if (otherCard.isChosen && !otherCard.isMatched) {
+                    [self.otherCards addObject:otherCard];
                     int matchScore = [card match:@[otherCard]];
                     if (matchScore) {
                         self.score +=matchScore * MATCH_BONUS;
