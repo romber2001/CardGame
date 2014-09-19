@@ -20,5 +20,6 @@
 - (void)chooseCardAtIndex:(NSUInteger)index;
 - (RLCard *)cardAtIndex:(NSUInteger)index;
 
+- (void)chooseCardAtIndex:(NSUInteger)index withMode:(NSUInteger)mode;
 
 @end
