@@ -12,11 +12,11 @@
 
 @interface RLViewController ()
 
-@property (nonatomic) int flipCount;
 @property (strong, nonatomic) RLDeck *deck;
 @property (nonatomic, strong) RLCardMatchingGame *game;
 @property (strong, nonatomic) IBOutletCollection(UIButton) NSArray *cardButtons;
 @property (weak, nonatomic) IBOutlet UILabel *scoreLabel;
+@property (weak, nonatomic) IBOutlet UISegmentedControl *modeSegControl;
 
 @end
 
@@ -45,12 +45,25 @@
     return _deck;
 }
                  
+- (IBAction)startNewGame:(UIButton *)sender {
+    self.game = nil;
+    //self.deck = nil;
+    [self updateUI];
+    self.modeSegControl.enabled = YES;
+}
 
 
 - (IBAction)touchCardButton:(UIButton *)sender
 {
+    self.modeSegControl.enabled = NO;
     int cardIndex = [self.cardButtons indexOfObject:sender];
-    [self.game chooseCardAtIndex:cardIndex];
+    
+    if (self.modeSegControl.selectedSegmentIndex == 0) {
+        [self.game chooseCardAtIndex:cardIndex];
+    } else {
+        [self.game chooseCardAtIndex:cardIndex withMode:self.modeSegControl.selectedSegmentIndex];
+    }
+    
     [self updateUI];
 }
 

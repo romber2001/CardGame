@@ -354,36 +354,32 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iqT-o7-sOu">
-                                <rect key="frame" x="20" y="360" width="136" height="30"/>
+                                <rect key="frame" x="20" y="360" width="136" height="28"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Start New Game" backgroundImage="cardfront">
                                     <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="startNewGame:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="hhA-TL-X8D"/>
+                                    <action selector="startNewGame:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="4gX-L9-eSJ"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="F9e-Mm-LVr">
-                                <rect key="frame" x="20" y="410" width="280" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="GaF-7f-2ot">
-                                <rect key="frame" x="164" y="362" width="136" height="29"/>
+                                <rect key="frame" x="164" y="360" width="136" height="29"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <segments>
                                     <segment title="2-Card-Match Mode"/>
                                     <segment title="3-Card-Match Mode"/>
+                                    <segment title="4-Card-Matching Mode"/>
                                 </segments>
+                                <color key="tintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                             </segmentedControl>
                         </subviews>
                         <color key="backgroundColor" red="0.0" green="0.50196081400000003" blue="0.25098040700000002" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
                     <connections>
-                        <outlet property="displayLabel" destination="F9e-Mm-LVr" id="nDJ-Qq-tnX"/>
+                        <outlet property="modeSegControl" destination="GaF-7f-2ot" id="6Hj-59-ggS"/>
                         <outlet property="scoreLabel" destination="d8g-TZ-r9m" id="0mp-aq-gwt"/>
                         <outletCollection property="cardButtons" destination="L05-DA-DSw" id="wZl-Bi-pcq"/>
                         <outletCollection property="cardButtons" destination="bkJ-yI-hym" id="1Xm-xh-ZJj"/>
@@ -419,7 +415,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-260" y="23"/>
+            <point key="canvasLocation" x="-539" y="-8"/>
         </scene>
     </scenes>
     <resources>

@@ -7,6 +7,9 @@
 //
 
 #import "RLPlayingCard.h"
+@interface RLPlayingCard()
+
+@end
 
 @implementation RLPlayingCard
 
@@ -23,6 +26,39 @@
         } else if (self.rank == otherCard.rank) {
             score = 4;
         }
+    } else {
+        NSCountedSet *rankSet = [[NSCountedSet alloc] init];
+        NSCountedSet *suitSet = [[NSCountedSet alloc] init];
+        
+        [rankSet addObject:[NSNumber numberWithInteger:self.rank]];
+        [suitSet addObject:self.suit];
+        
+        for (RLPlayingCard *card in otherCards) {
+            [rankSet addObject:[NSNumber numberWithInteger:card.rank]];
+            [suitSet addObject:card.suit];
+        }
+        
+        int suitScore = 0;
+        int rankScore = 0;
+        
+        for (NSNumber *rankNumber in rankSet) {
+            int rankCount = [rankSet countForObject:rankNumber] -1;
+            if (rankCount) {
+                rankScore += pow(4, rankCount);
+            }
+        }
+        
+        for (NSString *suitString in suitSet) {
+            int suitCount = [suitSet countForObject:suitString] -1;
+            if (suitCount) {
+                rankScore += suitCount * suitCount;
+            }
+        }
+        
+        score = rankScore + suitScore > rankScore * suitScore ? rankScore + suitScore : rankScore * suitScore;
+        
+        rankSet = nil;
+        suitSet = nil;
     }
     
     return score;
