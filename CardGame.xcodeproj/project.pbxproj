@@ -26,6 +26,7 @@
 		0249106C19B9D93D00E8793C /* RLPlayingCard.m in Sources */ = {isa = PBXBuildFile; fileRef = 0249106B19B9D93D00E8793C /* RLPlayingCard.m */; };
 		0249106F19B9D95C00E8793C /* RLDeck.m in Sources */ = {isa = PBXBuildFile; fileRef = 0249106E19B9D95C00E8793C /* RLDeck.m */; };
 		0249107219B9D98A00E8793C /* RLPlayingCardDeck.m in Sources */ = {isa = PBXBuildFile; fileRef = 0249107119B9D98A00E8793C /* RLPlayingCardDeck.m */; };
+		02AE1A9219CDF39F00824183 /* STFU_UIAccessibilityLoader.m in Sources */ = {isa = PBXBuildFile; fileRef = 02AE1A9119CDF39F00824183 /* STFU_UIAccessibilityLoader.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -68,6 +69,7 @@
 		0249106E19B9D95C00E8793C /* RLDeck.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RLDeck.m; path = Model/RLDeck.m; sourceTree = "<group>"; };
 		0249107019B9D98A00E8793C /* RLPlayingCardDeck.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RLPlayingCardDeck.h; path = Model/RLPlayingCardDeck.h; sourceTree = "<group>"; };
 		0249107119B9D98A00E8793C /* RLPlayingCardDeck.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RLPlayingCardDeck.m; path = Model/RLPlayingCardDeck.m; sourceTree = "<group>"; };
+		02AE1A9119CDF39F00824183 /* STFU_UIAccessibilityLoader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = STFU_UIAccessibilityLoader.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -127,6 +129,7 @@
 		0249103719B9CFB400E8793C /* CardGame */ = {
 			isa = PBXGroup;
 			children = (
+				02AE1A9119CDF39F00824183 /* STFU_UIAccessibilityLoader.m */,
 				0249104019B9CFB400E8793C /* RLAppDelegate.h */,
 				0249104119B9CFB400E8793C /* RLAppDelegate.m */,
 				0249104319B9CFB400E8793C /* Main.storyboard */,
@@ -289,6 +292,7 @@
 				0249104819B9CFB400E8793C /* RLViewController.m in Sources */,
 				02252AF119C5AC7F0031B746 /* RLCardMatchingGame.m in Sources */,
 				0249107219B9D98A00E8793C /* RLPlayingCardDeck.m in Sources */,
+				02AE1A9219CDF39F00824183 /* STFU_UIAccessibilityLoader.m in Sources */,
 				0249106819B9D82700E8793C /* RLCard.m in Sources */,
 				0249106C19B9D93D00E8793C /* RLPlayingCard.m in Sources */,
 			);

@@ -382,17 +382,18 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="qW7-4C-yBb">
-                                <rect key="frame" x="101" y="388" width="118" height="31"/>
+                            <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="0.0" maxValue="0.0" translatesAutoresizingMaskIntoConstraints="NO" id="8fe-Sp-qUa">
+                                <rect key="frame" x="101" y="396" width="118" height="31"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <connections>
-                                    <action selector="displayHistoryChoices:" destination="vXZ-lx-hvc" eventType="valueChanged" id="xxN-QS-07d"/>
+                                    <action selector="displayHistoryChoices:" destination="vXZ-lx-hvc" eventType="valueChanged" id="gwS-iR-Lma"/>
                                 </connections>
                             </slider>
                         </subviews>
                         <color key="backgroundColor" red="0.0" green="0.50196081400000003" blue="0.25098040700000002" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
                     <connections>
+                        <outlet property="choiceSlider" destination="8fe-Sp-qUa" id="jY0-Ub-x4u"/>
                         <outlet property="messageLabel" destination="dK8-oA-tR3" id="Yjn-u4-RUN"/>
                         <outlet property="modeSegControl" destination="GaF-7f-2ot" id="6Hj-59-ggS"/>
                         <outlet property="scoreLabel" destination="d8g-TZ-r9m" id="0mp-aq-gwt"/>
@@ -430,7 +431,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-823" y="-231"/>
+            <point key="canvasLocation" x="-953" y="-213"/>
         </scene>
     </scenes>
     <resources>

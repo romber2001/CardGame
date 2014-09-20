@@ -18,6 +18,8 @@
 @property (weak, nonatomic) IBOutlet UILabel *scoreLabel;
 @property (weak, nonatomic) IBOutlet UISegmentedControl *modeSegControl;
 @property (weak, nonatomic) IBOutlet UILabel *messageLabel;
+@property (weak, nonatomic) IBOutlet UISlider *choiceSlider;
+@property (strong, nonatomic) NSMutableArray *historyChoices;
 
 @end
 
@@ -45,41 +47,41 @@
     
     return _deck;
 }
+
+- (NSMutableArray *)historyChoices {
+    if (! _historyChoices) {
+        _historyChoices = [[NSMutableArray alloc] initWithObjects:@"", nil];
+    }
+    
+    return _historyChoices;
+}
                  
 - (IBAction)startNewGame:(UIButton *)sender {
     self.game = nil;
-    //self.deck = nil;
-    [self updateUI];
+    self.choiceSlider.value = 0.0;
+    self.choiceSlider.maximumValue = 0.0;
+    self.historyChoices = nil;
     self.modeSegControl.enabled = YES;
+    
+    [self updateUI];
 }
 
 - (IBAction)touchCardButton:(UIButton *)sender
 {
     self.modeSegControl.enabled = NO;
     int cardIndex = [self.cardButtons indexOfObject:sender];
-    
-    if (self.modeSegControl.selectedSegmentIndex == 0) {
-        [self.game chooseCardAtIndex:cardIndex withMode:self.modeSegControl.selectedSegmentIndex];
-    } else {
-        [self.game chooseCardAtIndex:cardIndex withMode:self.modeSegControl.selectedSegmentIndex];
-    }
+    [self.game chooseCardAtIndex:cardIndex withMode:self.modeSegControl.selectedSegmentIndex];
+    [self.historyChoices addObject:self.game.message];
+    self.choiceSlider.maximumValue = [self.historyChoices count];
+    self.choiceSlider.value = self.choiceSlider.maximumValue;
     
     [self updateUI];
 }
 
-
 - (IBAction)displayHistoryChoices:(UISlider *)sender {
-    [self updateUIofSlider:sender];
+    [self updateUI];
 }
 
-- (void)updateUIofSlider:(UISlider *)slider {
-    //int i = (int) slider.value;
-    if (slider.value != slider.maximumValue) {
-        self.messageLabel.text = [NSString stringWithFormat:@"%.0f", slider.value];
-    } else {
-        self.messageLabel.text = [NSString stringWithFormat:@"%.0f", slider.value];
-    }
-}
 
 - (void)updateUI
 {
@@ -93,7 +95,14 @@
         cardButton.enabled = !card.isMatched;
     }
     self.scoreLabel.text = [NSString stringWithFormat:@"Score: %d", self.game.score];
-    self.messageLabel.text = self.game.message;
+    
+    if (self.choiceSlider.value == self.choiceSlider.maximumValue) {
+        self.choiceSlider.alpha = 1.0;
+        self.messageLabel.text = [self.historyChoices lastObject];
+    } else {
+        self.choiceSlider.alpha = 0.3;
+        self.messageLabel.text = [self.historyChoices objectAtIndex: (int) self.choiceSlider.value];
+    }
 }
 
 - (NSString *)titleForCard:(RLCard *)card
