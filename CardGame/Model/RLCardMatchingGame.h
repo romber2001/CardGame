@@ -13,6 +13,7 @@
 @interface RLCardMatchingGame : NSObject
 
 @property (nonatomic, readonly) NSInteger score;
+@property (nonatomic, strong) NSString *message;
 
 - (instancetype)initWithCardCount:(NSUInteger) count
                         usingDeck:(RLDeck *)deck;

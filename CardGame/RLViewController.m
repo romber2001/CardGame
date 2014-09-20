@@ -17,6 +17,7 @@
 @property (strong, nonatomic) IBOutletCollection(UIButton) NSArray *cardButtons;
 @property (weak, nonatomic) IBOutlet UILabel *scoreLabel;
 @property (weak, nonatomic) IBOutlet UISegmentedControl *modeSegControl;
+@property (weak, nonatomic) IBOutlet UILabel *messageLabel;
 
 @end
 
@@ -52,19 +53,32 @@
     self.modeSegControl.enabled = YES;
 }
 
-
 - (IBAction)touchCardButton:(UIButton *)sender
 {
     self.modeSegControl.enabled = NO;
     int cardIndex = [self.cardButtons indexOfObject:sender];
     
     if (self.modeSegControl.selectedSegmentIndex == 0) {
-        [self.game chooseCardAtIndex:cardIndex];
+        [self.game chooseCardAtIndex:cardIndex withMode:self.modeSegControl.selectedSegmentIndex];
     } else {
         [self.game chooseCardAtIndex:cardIndex withMode:self.modeSegControl.selectedSegmentIndex];
     }
     
     [self updateUI];
+}
+
+
+- (IBAction)displayHistoryChoices:(UISlider *)sender {
+    [self updateUIofSlider:sender];
+}
+
+- (void)updateUIofSlider:(UISlider *)slider {
+    //int i = (int) slider.value;
+    if (slider.value != slider.maximumValue) {
+        self.messageLabel.text = [NSString stringWithFormat:@"%.0f", slider.value];
+    } else {
+        self.messageLabel.text = [NSString stringWithFormat:@"%.0f", slider.value];
+    }
 }
 
 - (void)updateUI
@@ -79,6 +93,7 @@
         cardButton.enabled = !card.isMatched;
     }
     self.scoreLabel.text = [NSString stringWithFormat:@"Score: %d", self.game.score];
+    self.messageLabel.text = self.game.message;
 }
 
 - (NSString *)titleForCard:(RLCard *)card
