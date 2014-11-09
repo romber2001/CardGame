@@ -70,7 +70,7 @@ static const int COST_TO_CHOOSE = 1;
             //match against another card
             for (RLCard *otherCard in self.cards) {
                 if (otherCard.isChosen && !otherCard.isMatched) {
-                    int matchScore = [card match:@[otherCard]];
+                    NSUInteger matchScore = [card match:@[otherCard]];
                     if (matchScore) {
                         self.score +=matchScore * MATCH_BONUS;
                         card.matched = YES;
@@ -114,7 +114,7 @@ static const int COST_TO_CHOOSE = 1;
             
             if ([self.otherCards count] > mode) {
                 //really matching cards
-                int matchScore = [card match:self.otherCards];
+                NSUInteger matchScore = [card match:self.otherCards];
                 
                 NSString *messageString = [NSString stringWithString:card.contents];
                 for (RLCard *otherCard in self.otherCards) {
@@ -132,7 +132,7 @@ static const int COST_TO_CHOOSE = 1;
                         [self.otherCards removeObject:matchedCard];
                     }
                     card.matched = YES;
-                    self.message = [NSString stringWithFormat:@"Matched %@ for %d points", messageString, matchScore];
+                    self.message = [NSString stringWithFormat:@"Matched %@ for %ld points", messageString, matchScore];
                     
                 } else {
                     matchScore = MISMATCH_PENALTY * (pow(mode, 2) > mode + 1 ? pow(mode, 2) : mode + 1);
@@ -141,7 +141,7 @@ static const int COST_TO_CHOOSE = 1;
                     firstCard.chosen = NO;
                     firstCard.added = NO;
                     [self.otherCards removeObject:firstCard];
-                    self.message = [NSString stringWithFormat:@"%@ don't match! %d points penalty!", messageString, matchScore];
+                    self.message = [NSString stringWithFormat:@"%@ don't match! %ld points penalty!", messageString, matchScore];
                 }
                 
                 messageString = nil;

@@ -69,7 +69,7 @@
 - (IBAction)touchCardButton:(UIButton *)sender
 {
     self.modeSegControl.enabled = NO;
-    int cardIndex = [self.cardButtons indexOfObject:sender];
+    NSUInteger cardIndex = [self.cardButtons indexOfObject:sender];
     [self.game chooseCardAtIndex:cardIndex withMode:self.modeSegControl.selectedSegmentIndex];
     [self.historyChoices addObject:self.game.message];
     self.choiceSlider.maximumValue = [self.historyChoices count];
@@ -86,7 +86,7 @@
 - (void)updateUI
 {
     for (UIButton *cardButton in self.cardButtons) {
-        int cardIndex = [self.cardButtons indexOfObject:cardButton];
+        NSUInteger cardIndex = [self.cardButtons indexOfObject:cardButton];
         RLCard *card = [self.game cardAtIndex:cardIndex];
         [cardButton setTitle:[self titleForCard:card]
                     forState:UIControlStateNormal];
@@ -94,7 +94,7 @@
                               forState:UIControlStateNormal];
         cardButton.enabled = !card.isMatched;
     }
-    self.scoreLabel.text = [NSString stringWithFormat:@"Score: %d", self.game.score];
+    self.scoreLabel.text = [NSString stringWithFormat:@"Score: %ld", self.game.score];
     
     if (self.choiceSlider.value == self.choiceSlider.maximumValue) {
         self.choiceSlider.alpha = 1.0;

@@ -42,14 +42,14 @@
         int rankScore = 0;
         
         for (NSNumber *rankNumber in rankSet) {
-            int rankCount = [rankSet countForObject:rankNumber] -1;
+            NSUInteger rankCount = [rankSet countForObject:rankNumber] -1;
             if (rankCount) {
                 rankScore += pow(4, rankCount);
             }
         }
         
         for (NSString *suitString in suitSet) {
-            int suitCount = [suitSet countForObject:suitString] -1;
+            NSUInteger suitCount = [suitSet countForObject:suitString] -1;
             if (suitCount) {
                 rankScore += suitCount * suitCount;
             }
